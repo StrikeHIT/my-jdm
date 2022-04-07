@@ -33,7 +33,7 @@ func handleRequests() {
 	myRouter.HandleFunc("/api/brand/name/{name}", entities.GetBrandByName)
 	myRouter.HandleFunc("/api/brands", entities.GetAllBrands)
 
-	log.Fatal(http.ListenAndServe(":3000", myRouter))
+	log.Fatal(http.ListenAndServe(":3001", myRouter))
 }
 
 func main() {
