@@ -17,7 +17,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequests() {
-	log.Println("Comece a desenvolver http:/localhost:3000/")
+	log.Println("Comece a desenvolver http:/localhost:3001/")
 	log.Println("Para interromper o servidor use CONTROL-C.")
 
 	//ROUTES

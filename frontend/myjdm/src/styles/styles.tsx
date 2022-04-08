@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderComponent = styled.header`
     padding:20px 0px;
@@ -38,3 +38,35 @@ export const FooterComponent = styled.header`
         margin: 0px;
     }
 `; 
+
+export const CarsList = styled.ul`
+    padding:15px 0px 20px 0px;
+    max-width: 1200px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    > p{
+        color: #FFF;
+        text-align: center;
+        font-weight: 300;
+        margin: 0px;
+    }
+`; 
+
+
+export const TheCar = styled.ul`
+    padding:15px 0px 20px 0px;
+    max-width: 1200px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    > p{
+        color: #FFF;
+        text-align: center;
+        font-weight: 300;
+        margin: 0px;
+    }
+`; 
+
