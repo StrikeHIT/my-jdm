@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/StrikeHIT/my-jdm/configs"
+	"github.com/StrikeHIT/my-jdm/utils"
 	"github.com/gorilla/mux"
 )
 
@@ -16,27 +17,30 @@ type Car struct {
 }
 
 func GetCar(w http.ResponseWriter, r *http.Request) {
+	utils.SetHeaders(w, r)
 	db := configs.Open()
 
 	car := []Car{}
-	result := db.Find(&car)
+	result := db.Find(&car).Value
 	json.NewEncoder(w).Encode(result)
 }
 
 func GetAllCars(w http.ResponseWriter, r *http.Request) {
+	utils.SetHeaders(w, r)
 	db := configs.Open()
 
 	cars := []Car{}
-	result := db.Find(&cars)
+	result := db.Find(&cars).Value
 	json.NewEncoder(w).Encode(result)
 }
 
 func GetCarByName(w http.ResponseWriter, r *http.Request) {
+	utils.SetHeaders(w, r)
 	db := configs.Open()
 
 	params := mux.Vars(r)
 	name := params["name"]
 	cars := []Car{}
-	result := db.Where("name LIKE ?", "%"+name+"%").Find(&cars)
+	result := db.Where("name LIKE ?", "%"+name+"%").Find(&cars).Value
 	json.NewEncoder(w).Encode(result)
 }

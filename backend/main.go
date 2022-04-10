@@ -25,13 +25,13 @@ func handleRequests() {
 
 	myRouter.HandleFunc("/", homePage)
 
-	myRouter.HandleFunc("/api/car/{id}", entities.GetCar)
-	myRouter.HandleFunc("/api/car/name/{name}", entities.GetCarByName)
-	myRouter.HandleFunc("/api/cars", entities.GetAllCars)
+	myRouter.HandleFunc("/api/car/{id}", entities.GetCar).Methods("GET")
+	myRouter.HandleFunc("/api/car/name/{name}", entities.GetCarByName).Methods("GET")
+	myRouter.HandleFunc("/api/cars", entities.GetAllCars).Methods("GET")
 
-	myRouter.HandleFunc("/api/brand/{id}", entities.GetBrand)
-	myRouter.HandleFunc("/api/brand/name/{name}", entities.GetBrandByName)
-	myRouter.HandleFunc("/api/brands", entities.GetAllBrands)
+	myRouter.HandleFunc("/api/brand/{id}", entities.GetBrand).Methods("GET")
+	myRouter.HandleFunc("/api/brand/name/{name}", entities.GetBrandByName).Methods("GET")
+	myRouter.HandleFunc("/api/brands", entities.GetAllBrands).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3001", myRouter))
 }
